@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
 
 @Component({
   selector: 'rc-media-item',
@@ -6,4 +6,20 @@ import { Component } from '@angular/core'
   styleUrls: ['/media-item.component.css']
 })
 
-export class MediaItemComponent { }
+export class MediaItemComponent {
+
+  @Input() mediaItem;
+  @Output() delete = new EventEmitter();
+
+  name = 'The Redemption'
+
+  wasWatched() {
+    return true;
+  }
+
+  onDelete() {
+    console.log("delete");
+    alert("CARAJO");
+    this.delete.emit(this.mediaItem);
+  }
+}

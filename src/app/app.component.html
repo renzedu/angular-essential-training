@@ -1,5 +1,9 @@
 <section>
-  <h1>RENZO</h1>
-  <h1>RENZO1</h1>
-  <rc-media-item></rc-media-item>
+  <header>
+    <h1>Media Watch List</h1>
+    <p class="description">Keeping track of the media I want to watch.</p>
+  </header>
+  <rc-media-item (delete)="onMediaItemDelete($event)"
+                 [mediaItem]="firstMediaItem" >
+  </rc-media-item>
 </section>
